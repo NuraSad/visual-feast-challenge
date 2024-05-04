@@ -9,7 +9,7 @@ const ImageCom = ({ image, alt, options }) => {
   };
   return (
     <img
-      src={process.env.PUBLIC_URL + `/${image}.jpg`}
+      src={process.env.PUBLIC_URL + `.netlify/images?url=/${image}.jpg`}
       alt={alt}
       style={imageStyle}
     />
