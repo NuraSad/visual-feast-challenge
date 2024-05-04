@@ -5,6 +5,7 @@ import ImageCom from "./Image";
 import Image from "./Image";
 
 const imagesList = [
+  "freya1",
   "freya2",
   "freya3",
   "freya4",
@@ -32,20 +33,14 @@ const Gallery = () => {
 
   return (
     <div>
-      <ImageCom
-        key={100}
-        image="freya1"
-        alt="freya1"
-        options={initialOptions}
-      />
-      {/* {imagesList.map((image, key) => (
+      {imagesList.map((image, key) => (
         <ImageCom
           key={key}
           image={image}
           alt={image}
           options={initialOptions}
         />
-      ))} */}
+      ))}
     </div>
   );
 };
