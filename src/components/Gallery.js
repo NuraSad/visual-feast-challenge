@@ -1,5 +1,6 @@
 import { toContainElement } from "@testing-library/jest-dom/matchers";
 import React, { useState, useEffect, useRef } from "react";
+import ImageCom from "./Image";
 
 import Image from "./Image";
 
@@ -22,30 +23,24 @@ const imagesList = [
 ];
 
 const Gallery = () => {
-  const [images, setImages] = useState([]);
-  const [rootWidth, setrootWidth] = useState(0);
-  const rootWidthRef = useRef(null);
-
-  useEffect(() => {
-    setrootWidth(rootWidthRef.current.clientWidth);
-  }, []);
-
-  const initialW = Math.floor(rootWidth / 5);
-
-  const initialParams = {
-    w: initialW,
+  const [rootWidth, setrootWidth] = useState(window.innerWidth);
+  const [initialOptions, _] = useState({
+    w: Math.floor(rootWidth / 5),
     h: null,
     fit: "contain",
     position: "center",
-  };
+  });
 
   return (
     <div>
-      {imagesList.map((image, key) => {
-        return (
-          <Image key={key} image={image} alt={image} params={initialParams} />
-        );
-      })}
+      {imagesList.map((image, key) => (
+        <ImageCom
+          key={key}
+          image={image}
+          alt={image}
+          options={initialOptions}
+        />
+      ))}
     </div>
   );
 };
