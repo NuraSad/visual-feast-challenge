@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from "react";
 
-const imageBaseURL =
-  "https://visual-feast-challenge.netlify.app/.netlify/images?url=/";
-
 const ImageCom = ({ image, alt, options }) => {
-  const source = imageBaseURL + image + ".jpg";
-
-  return <img src={source} alt={alt} />;
+  const imageStyle = {
+    width: options.w,
+    height: options.h ?? "auto",
+    fit: options.fit,
+    position: options.position,
+  };
+  return (
+    <img
+      src={process.env.PUBLIC_URL + `/${image}.jpg`}
+      alt={alt}
+      style={imageStyle}
+    />
+  );
 };
 
 export default ImageCom;
