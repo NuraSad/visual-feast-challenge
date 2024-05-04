@@ -1,0 +1,26 @@
+footer {
+  display: flex;
+  color: #fff;
+  background-color: #464d55;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100vw;
+  height: 5.5%;
+}
+
+footer img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.githubLogo {
+  border-radius: 50%;
+}
+
+.mailLogo {
+  height: 1.6rem;
+  width: 2.17rem;
+}
