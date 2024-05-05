@@ -26,7 +26,7 @@ const Gallery = () => {
   const [rootWidth, setrootWidth] = useState(window.innerWidth);
   const [initialOptions, _] = useState({
     w: Math.floor(rootWidth / 5),
-    h: null,
+    h: "",
     fit: "contain",
     position: "center",
   });
