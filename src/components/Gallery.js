@@ -28,9 +28,10 @@ const Gallery = () => {
 
   return (
     <div>
-      {imagesList.map((image, key) => (
+      {imagesList.map((image, idx) => (
         <ImageCom
-          key={key}
+          key={idx}
+          idx={idx}
           image={image}
           alt={image}
           options={initialOptions}
