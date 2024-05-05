@@ -1,6 +1,6 @@
-import { toContainElement } from "@testing-library/jest-dom/matchers";
 import React, { useState, useEffect, useRef } from "react";
 import ImageCom from "./Image";
+import "./Gallery.css";
 
 const imagesList = [
   "freya1",
@@ -20,21 +20,21 @@ const imagesList = [
 const Gallery = () => {
   const [rootWidth, setrootWidth] = useState(window.innerWidth);
   const [initialOptions, _] = useState({
-    w: rootWidth > 700 ? Math.floor(rootWidth / 4) : rootWidth,
+    w: rootWidth > 700 ? Math.floor((rootWidth - 40) / 4) : rootWidth,
     h: "",
     fit: "contain",
     position: "center",
   });
 
   return (
-    <div>
+    <div className="gallery-container" role="listbox">
       {imagesList.map((image, idx) => (
         <ImageCom
           key={idx}
           idx={idx}
           image={image}
           alt={image}
-          options={initialOptions}
+          initOptions={initialOptions}
         />
       ))}
     </div>
