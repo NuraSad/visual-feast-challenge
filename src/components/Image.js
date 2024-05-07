@@ -12,11 +12,11 @@ const ImageCom = ({ idx, image, alt, initOptions }) => {
   const [scrollH, setScrollH] = useState(0);
   const baseUrl = process.env.PUBLIC_URL + ".netlify/images?url=/";
   //   change before build
-  const localUrl = "/" + image + ".jpg";
+  //   const localUrl = "/" + image + ".jpg";
   const imageURL = baseUrl + image + ".jpg&" + new URLSearchParams(options);
 
   const containerClass = isOpen ? "img-field-fullscreen" : "img-field";
-  const handelImageClick = () => {
+  const handleImageClick = () => {
     const scrollTop =
       window.pageYOffset !== undefined
         ? window.pageYOffset
@@ -27,6 +27,7 @@ const ImageCom = ({ idx, image, alt, initOptions }) => {
           ).scrollTop;
     setTimeout(() => {
       window.scroll({ top: -1, left: 0, behavior: "smooth" });
+      document.body.style.overflow = "hidden";
     }, 10);
     setScrollH(scrollTop);
     setIsOpen(true);
@@ -36,6 +37,7 @@ const ImageCom = ({ idx, image, alt, initOptions }) => {
     // workaround mobile safari not working properly
     setTimeout(() => {
       window.scroll({ top: scrollH, left: 0, behavior: "smooth" });
+      document.body.style.overflow = "";
     }, 10);
     setIsOpen(false);
   };
@@ -43,7 +45,7 @@ const ImageCom = ({ idx, image, alt, initOptions }) => {
   return (
     <div className={containerClass}>
       {!isOpen ? (
-        <img src={localUrl} alt={alt} onClick={handelImageClick} />
+        <img src={imageURL} alt={alt} onClick={handleImageClick} />
       ) : (
         <WholeImageView
           imgUrl={imageURL}

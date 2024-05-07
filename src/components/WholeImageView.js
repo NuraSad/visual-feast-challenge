@@ -58,18 +58,22 @@ const WholeImageView = ({ imgUrl, alt, options, onClose }) => {
           </select>
         </label>
         <label>
-          Quality (0-100):
+          Quality (1-100):
           <input
             type="number"
-            min="0"
+            min="1"
             max="100"
             name="quality"
             value={params.quality ?? 75}
             onChange={handleInputChange}
           />
         </label>
-        <button onClick={handleButtonClick}>Get an Image</button>
-        <button onClick={onClose}>Close X</button>
+        <button className="submit-button" onClick={handleButtonClick}>
+          Get an Image
+        </button>
+        <button className="close-button" onClick={onClose}>
+          X
+        </button>
       </div>
     </>
   );

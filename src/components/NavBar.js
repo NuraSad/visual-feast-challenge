@@ -1,9 +1,10 @@
 import React from "react";
+import "./NavBar.css";
 
 const NavBar = () => {
   return (
     <nav>
-      <h1>Welcome to Gallery of Freya The Cat</h1>
+      <h1>Welcome to the Gallery of Freya the Cat</h1>
     </nav>
   );
 };
