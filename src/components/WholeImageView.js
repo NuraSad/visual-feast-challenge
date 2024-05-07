@@ -14,7 +14,7 @@ const WholeImageView = ({ imgUrl, alt, options, onClose }) => {
   };
   return (
     <>
-      <img className="custom img" src={imageURL} alr={alt} />
+      <img className="custom-img" src={imageURL} alr={alt} />
       <div className="input-field">
         <label>
           Width:
