@@ -17,8 +17,6 @@ const ImageCom = ({ idx, image, alt, initOptions }) => {
 
   const containerClass = isOpen ? "img-field-fullscreen" : "img-field";
   const handelImageClick = () => {
-    let body = document.querySelector("body");
-    body.style.overflow = "hidden";
     const scrollTop =
       window.pageYOffset !== undefined
         ? window.pageYOffset
@@ -27,15 +25,18 @@ const ImageCom = ({ idx, image, alt, initOptions }) => {
             document.body.parentNode ||
             document.body
           ).scrollTop;
-    document.body.scrollTop = document.documentElement.scrollTop = 0;
+    setTimeout(() => {
+      window.scroll({ top: -1, left: 0, behavior: "smooth" });
+    }, 10);
     setScrollH(scrollTop);
     setIsOpen(true);
   };
 
   const handleCloseButton = () => {
-    let body = document.querySelector("body");
-    body.style.overflow = "";
-    document.body.scrollTop = document.documentElement.scrollTop = scrollH;
+    // workaround mobile safari not working properly
+    setTimeout(() => {
+      window.scroll({ top: scrollH, left: 0, behavior: "smooth" });
+    }, 10);
     setIsOpen(false);
   };
 

@@ -12,7 +12,6 @@ const WholeImageView = ({ imgUrl, alt, options, onClose }) => {
   };
   const handleButtonClick = () => {
     setImageURL(baseImageURL + "&" + new URLSearchParams(params));
-    console.log(imageURL);
   };
   return (
     <>
