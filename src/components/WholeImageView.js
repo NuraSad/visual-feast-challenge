@@ -8,14 +8,13 @@ const WholeImageView = ({ imgUrl, alt, options, onClose }) => {
 
   const handleInputChange = (e) => {
     setParams({ ...params, [e.target.name]: e.target.value });
-    console.log(params);
   };
   const handleButtonClick = () => {
     setImageURL(baseImageURL + "&" + new URLSearchParams(params));
   };
   return (
     <>
-      <img src={imageURL} alr={alt} />
+      <img className="custom img" src={imageURL} alr={alt} />
       <div className="input-field">
         <label>
           Width:

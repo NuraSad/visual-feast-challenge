@@ -35,8 +35,10 @@ label input {
   padding: 0.2rem;
 }
 
-img {
-  max-width: 2000px;
+img.custom-image {
+  max-width: 85%;
+  max-height: 90vh;
+  flex-grow: 2;
   object-fit: contain;
 }
 
