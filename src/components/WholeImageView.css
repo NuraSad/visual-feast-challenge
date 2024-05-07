@@ -36,9 +36,9 @@ label input {
 }
 
 img.custom-img {
-  max-width: 85%;
+  max-width: 78%;
   max-height: 90vh;
-  flex-grow: 2;
+  flex-grow: 0;
   object-fit: contain;
 }
 

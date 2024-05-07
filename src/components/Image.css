@@ -1,7 +1,6 @@
 img {
   border-radius: 0.5rem;
   flex-grow: 1;
-  /* change before build */
   display: block;
   max-width: 100%;
   height: auto;
@@ -20,7 +19,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  justify-items: center;
+  justify-content: center;
   align-items: center;
 }
 
