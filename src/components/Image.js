@@ -12,7 +12,7 @@ const ImageCom = ({ idx, image, alt, initOptions }) => {
   const [scrollH, setScrollH] = useState(0);
   const baseUrl = process.env.PUBLIC_URL + ".netlify/images?url=/";
   //   change before build
-  //   const localUrl = "/" + image + ".jpg";
+  const localUrl = "/" + image + ".jpg";
   const imageURL = baseUrl + image + ".jpg&" + new URLSearchParams(options);
 
   const containerClass = isOpen ? "img-field-fullscreen" : "img-field";
@@ -45,7 +45,7 @@ const ImageCom = ({ idx, image, alt, initOptions }) => {
   return (
     <div className={containerClass}>
       {!isOpen ? (
-        <img src={imageURL} alt={alt} onClick={handleImageClick} />
+        <img src={localUrl} alt={alt} onClick={handleImageClick} />
       ) : (
         <WholeImageView
           imgUrl={imageURL}
