@@ -37,15 +37,15 @@ const ImageCom = ({ idx, image, alt, initOptions }) => {
     // workaround mobile safari not working properly
     setTimeout(() => {
       window.scroll({ top: scrollH, left: 0, behavior: "smooth" });
-      document.body.style.overflow = "";
     }, 10);
+    document.body.style.overflow = "";
     setIsOpen(false);
   };
 
   return (
     <div className={containerClass}>
       {!isOpen ? (
-        <img src={localUrl} alt={alt} onClick={handleImageClick} />
+        <img src={imageURL} alt={alt} onClick={handleImageClick} />
       ) : (
         <WholeImageView
           imgUrl={imageURL}

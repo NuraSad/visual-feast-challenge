@@ -1,12 +1,19 @@
 footer {
   display: flex;
+  margin-top: 0.5rem;
   color: #fff;
   background-color: #464d55;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
   width: 100vw;
+  font-size: 1.2rem;
+  font-weight: 600;
   height: 5.5%;
+}
+
+a {
+  cursor: pointer;
 }
 
 footer img {
@@ -18,9 +25,4 @@ footer img {
 
 .githubLogo {
   border-radius: 50%;
-}
-
-.mailLogo {
-  height: 1.6rem;
-  width: 2.17rem;
 }

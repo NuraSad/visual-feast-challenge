@@ -43,6 +43,14 @@ label input {
   border: 1px solid white;
 }
 
+input:focus {
+  outline: none;
+}
+
+select:focus {
+  outline: none;
+}
+
 label:last-of-type input {
   width: 38%;
 }
@@ -51,6 +59,28 @@ img.custom-img {
   max-width: 78%;
   max-height: 90vh;
   flex-grow: 0;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10rem;
+}
+
+p {
+  font-size: 1.8rem;
+  color: white;
+}
+
+.loading-logo {
+  max-width: 150px;
+  height: auto;
+}
+
+.hidden {
+  display: none;
 }
 
 .submit-button {
@@ -64,6 +94,14 @@ img.custom-img {
   border-radius: 0.5rem;
   margin-top: 0.3rem;
   cursor: pointer;
+  transition: 0.3s ease;
+}
+
+@media (hover: hover) {
+  .submit-button:hover {
+    background-color: #ef8354;
+    color: white;
+  }
 }
 
 .close-button {
