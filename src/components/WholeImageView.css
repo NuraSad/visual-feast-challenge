@@ -191,9 +191,3 @@ p {
     font-size: 1.8rem;
   }
 }
-
-@media only screen and (max-width: 1180px) {
-  img {
-    max-width: 70%;
-  }
-}
