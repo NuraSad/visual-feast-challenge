@@ -9,18 +9,14 @@ const Footer = () => {
   return (
     <footer>
       <p>Ainur Saduova &#169;</p>
-      <a href="https://www.ainursaduova.com/">
+      <a href="https://www.ainursaduova.com/" target="_blank" rel="noreferrer">
         <img
           src={WebsiteLogo}
           alt="Website Logo"
           className={styles.githubLogo}
         />
       </a>
-      <a
-        href="https://github.com/NuraSad/sorting-visualizer"
-        target="_blank"
-        rel="noreferrer"
-      >
+      <a href="https://github.com/NuraSad" target="_blank" rel="noreferrer">
         <img src={GithubLogo} alt="GitHub Logo" className={styles.githubLogo} />
       </a>
       <a
