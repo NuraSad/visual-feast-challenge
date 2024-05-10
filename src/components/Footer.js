@@ -8,7 +8,7 @@ import WebsiteLogo from "./logo/global-network.png";
 const Footer = () => {
   return (
     <footer>
-      <span>Ainur Saduova &#169;</span>
+      <span role="heading">Ainur Saduova &#169;</span>
       <a
         href="https://www.ainursaduova.com/"
         target="_blank"
