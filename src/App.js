@@ -6,7 +6,10 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" role="main">
+      <a href="#gallery" className="skip-to-main-content-link">
+        Skip to main content
+      </a>
       <NavBar />
       <Gallery />
       <Footer />

@@ -36,7 +36,7 @@ const Gallery = () => {
   });
 
   return (
-    <div className="gallery-container" role="listbox">
+    <div id="gallery" className="gallery-container" role="listbox">
       {imagesList.map((image, idx) => (
         <ImageCom
           key={idx}
