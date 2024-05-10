@@ -20,16 +20,37 @@
   color: white;
 }
 
+.select-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
 select {
   font-size: 1.2rem;
+  appearance: none;
   font-weight: 600;
   font-family: "Dosis", sans-serif;
-  width: 50%;
+  width: 60%;
   color: white;
   border-radius: 0.5rem;
   background: transparent !important;
   border: 1px solid white;
   padding: 0.2rem;
+}
+
+select[name="position"] {
+  width: 77%;
+}
+
+.select-wrapper::after {
+  content: "▼";
+  font-size: 0.8rem;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-40%);
+  position: absolute;
 }
 
 label input {
@@ -163,4 +184,10 @@ p {
   color: white;
   border-radius: 50%;
   border: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .close-button {
+    font-size: 1.8rem;
+  }
 }

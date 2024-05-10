@@ -74,25 +74,29 @@ const WholeImageView = ({ imgUrl, alt, options, onClose }) => {
         </label>
         <label>
           Fit:
-          <select value={params.fit} name="fit" onChange={handleInputChange}>
-            <option value="contain">Contain</option>
-            <option value="cover">Cover</option>
-            <option value="fill">Fill</option>
-          </select>
+          <div className="select-wrapper">
+            <select value={params.fit} name="fit" onChange={handleInputChange}>
+              <option value="contain">Contain</option>
+              <option value="cover">Cover</option>
+              <option value="fill">Fill</option>
+            </select>
+          </div>
         </label>
         <label>
           Position:
-          <select
-            value={params.position}
-            name="position"
-            onChange={handleInputChange}
-          >
-            <option value="center">Center</option>
-            <option value="left">Left</option>
-            <option value="right">Right</option>
-            <option value="top">Top</option>
-            <option value="bottom">Bottom</option>
-          </select>
+          <div className="select-wrapper">
+            <select
+              value={params.position}
+              name="position"
+              onChange={handleInputChange}
+            >
+              <option value="center">Center</option>
+              <option value="left">Left</option>
+              <option value="right">Right</option>
+              <option value="top">Top</option>
+              <option value="bottom">Bottom</option>
+            </select>
+          </div>
         </label>
         <label>
           Quality (1-100):
