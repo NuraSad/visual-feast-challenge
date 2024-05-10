@@ -107,7 +107,7 @@ const WholeImageView = ({ imgUrl, alt, options, onClose }) => {
         </label>
         {isShowing ? (
           <div className="url-field">
-            <p>{`https://visual-feast-challenge.netlify.app${imageURL}`}</p>
+            <p>{`https://visual-feast-challenge.netlify.app/${imageURL}`}</p>
             <button className="url-btn" onClick={handleImgBtnClick}>
               Hide ImgURL
             </button>
