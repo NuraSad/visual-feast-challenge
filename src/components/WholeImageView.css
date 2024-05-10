@@ -5,6 +5,7 @@
   justify-content: center;
   padding-right: 0.5rem;
   row-gap: 0.5rem;
+  position: relative;
 }
 
 .input-field label {
@@ -59,6 +60,7 @@ img.custom-img {
   max-width: 78%;
   max-height: 90vh;
   flex-grow: 0;
+  cursor: default;
 }
 
 .loading-container {
@@ -83,6 +85,39 @@ p {
   display: none;
 }
 
+.url-field {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 1rem;
+  position: absolute;
+  top: -2px;
+  left: 0;
+  background-color: rgb(44, 44, 44);
+  color: white;
+  width: 100%;
+  height: 105%;
+  border-radius: 0.5rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.url-field p {
+  width: 100%;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+.btn-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
+  margin-top: 0.3rem;
+}
+
 .submit-button {
   font-size: 1.2rem;
   font-weight: 600;
@@ -92,9 +127,20 @@ p {
   color: #464d55;
   border: none;
   border-radius: 0.5rem;
-  margin-top: 0.3rem;
   cursor: pointer;
   transition: 0.3s ease;
+}
+
+.url-btn {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: "Dosis", sans-serif;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: gainsboro;
+  color: #464d55;
+  cursor: pointer;
 }
 
 @media (hover: hover) {

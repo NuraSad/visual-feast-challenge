@@ -1,24 +1,33 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import ImageCom from "./Image";
 import "./Gallery.css";
 
 const imagesList = [
-  "freya1",
-  "freya2",
-  "freya3",
-  "freya6",
-  "freya4",
-  "freya5",
-  "freya8",
-  "freya9",
-  "freya11",
-  "freya12",
-  "freya13",
-  "freya15",
+  { img: "freya1", alt: "Black cat is showing her belly on the floor" },
+  { img: "freya3", alt: "Black cat is looking forward" },
+  { img: "freya6", alt: "Black cat is showing her belly on the sofa" },
+  { img: "freya2", alt: "Black cat is lying on the sofa" },
+  {
+    img: "freya4",
+    alt: "Black cat is lying on the sofa with her paws straight",
+  },
+  {
+    img: "freya12",
+    alt: "Black cat is lying on the sofa and looks straight into camera",
+  },
+  { img: "freya9", alt: "Grumpy black cat is lying on the computer cases" },
+  { img: "freya5", alt: "Black cat with a toy mouse on her head" },
+  { img: "freya13", alt: "Grumpy black cat is sitting on her bed" },
+  { img: "freya11", alt: "Black cat is sitting among the New Year's garlands" },
+  { img: "freya8", alt: "Black cat with toy ball" },
+  {
+    img: "freya15",
+    alt: "Black cat is looking at the window with small pots next to her",
+  },
 ];
 
 const Gallery = () => {
-  const [rootWidth, setRootWidth] = useState(window.innerWidth);
+  const [rootWidth] = useState(window.innerWidth);
   const [initialOptions] = useState({
     w: rootWidth > 700 ? Math.floor((rootWidth - 60) / 4) : rootWidth,
     h: "",
@@ -32,8 +41,8 @@ const Gallery = () => {
         <ImageCom
           key={idx}
           idx={idx}
-          image={image}
-          alt={image}
+          image={image.img}
+          alt={image.alt}
           initOptions={initialOptions}
         />
       ))}

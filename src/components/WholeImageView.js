@@ -6,15 +6,13 @@ const WholeImageView = ({ imgUrl, alt, options, onClose }) => {
   const baseImageURL = imgUrl.split("&")[0];
   const [params, setParams] = useState({ ...options });
   const [imageURL, setImageURL] = useState(baseImageURL);
+  const [isShowing, setIsShowing] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   const loadingContainerClassname = isLoading
     ? "loading-container"
     : "loading-container hidden";
   const imageClassname = isLoading ? "custom-img hidden" : "custom-img";
-  const testIMGURL =
-    "https://663a9f552cc48866a4b159d8--visual-feast-challenge.netlify.app/.netlify/images?url=/freya2.jpg";
-
   const handleInputChange = (e) => {
     setParams({ ...params, [e.target.name]: e.target.value });
   };
@@ -30,18 +28,27 @@ const WholeImageView = ({ imgUrl, alt, options, onClose }) => {
   };
   const handleButtonClick = () => {
     setImageURL(baseImageURL + "&" + new URLSearchParams(params));
+    setIsLoading(true);
+  };
+
+  const handleImgBtnClick = () => {
+    setIsShowing((prev) => !prev);
   };
 
   return (
     <>
       <div className={loadingContainerClassname}>
-        <img className="loading-logo" src={loadingGif} alt="loading image" />
+        <img
+          className="loading-logo"
+          src={loadingGif}
+          alt="cat can food spinning"
+        />
         <p>Loading...</p>
       </div>
       <img
         className={imageClassname}
         src={imageURL}
-        alr={alt}
+        alt={alt}
         onLoad={handleImageLoad}
       />
       <div className="input-field">
@@ -51,6 +58,7 @@ const WholeImageView = ({ imgUrl, alt, options, onClose }) => {
             type="number"
             value={params.w}
             name="w"
+            min="2"
             onChange={handleInputChange}
           />
         </label>
@@ -60,6 +68,7 @@ const WholeImageView = ({ imgUrl, alt, options, onClose }) => {
             type="number"
             value={params.h}
             name="h"
+            min="2"
             onChange={handleInputChange}
           />
         </label>
@@ -96,13 +105,26 @@ const WholeImageView = ({ imgUrl, alt, options, onClose }) => {
             onChange={handleInputChange}
           />
         </label>
-        <button className="submit-button" onClick={handleButtonClick}>
-          Get an Image
-        </button>
-        <button className="close-button" onClick={onClose}>
-          X
-        </button>
+        {isShowing ? (
+          <div className="url-field">
+            <p>{`https://visual-feast-challenge.netlify.app${imageURL}`}</p>
+            <button className="url-btn" onClick={handleImgBtnClick}>
+              Hide ImgURL
+            </button>
+          </div>
+        ) : null}
+        <div className="btn-field">
+          <button className="submit-button" onClick={handleButtonClick}>
+            Get an Image
+          </button>
+          <button className="url-btn" onClick={handleImgBtnClick}>
+            Show ImgURL
+          </button>
+        </div>
       </div>
+      <button className="close-button" onClick={onClose}>
+        X
+      </button>
     </>
   );
 };

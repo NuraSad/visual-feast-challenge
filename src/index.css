@@ -12,8 +12,13 @@ code {
     monospace;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   html {
-    font-size: 62.5%;
+    font-size: 80%;
+  }
+  @media screen and (min-width: 1600px) {
+    html {
+      font-size: 120%;
+    }
   }
 }

@@ -7,9 +7,13 @@ footer {
   align-items: center;
   justify-content: space-evenly;
   width: 100vw;
-  font-size: 1.2rem;
   font-weight: 600;
   height: 5.5%;
+}
+
+p {
+  font-size: 1.3rem;
+  margin: 1rem 0;
 }
 
 a {

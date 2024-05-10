@@ -11,8 +11,6 @@ const ImageCom = ({ idx, image, alt, initOptions }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrollH, setScrollH] = useState(0);
   const baseUrl = process.env.PUBLIC_URL + ".netlify/images?url=/";
-  //   change before build
-  const localUrl = "/" + image + ".jpg";
   const imageURL = baseUrl + image + ".jpg&" + new URLSearchParams(options);
 
   const containerClass = isOpen ? "img-field-fullscreen" : "img-field";
