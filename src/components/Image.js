@@ -15,7 +15,7 @@ const ImageCom = ({ idx, image, alt, initOptions }) => {
 
   const containerClass = isOpen ? "img-field-fullscreen" : "img-field";
   const handleImageClick = () => {
-    const scrollTop =
+    let scrollTop =
       window.pageYOffset !== undefined
         ? window.pageYOffset
         : (
@@ -25,8 +25,8 @@ const ImageCom = ({ idx, image, alt, initOptions }) => {
           ).scrollTop;
     setTimeout(() => {
       window.scroll({ top: -1, left: 0, behavior: "smooth" });
-      document.body.style.overflow = "hidden";
     }, 10);
+    document.body.style.overflow = "hidden";
     setScrollH(scrollTop);
     setIsOpen(true);
   };

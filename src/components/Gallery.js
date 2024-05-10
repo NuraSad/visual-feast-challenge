@@ -29,7 +29,7 @@ const imagesList = [
 const Gallery = () => {
   const [rootWidth] = useState(window.innerWidth);
   const [initialOptions] = useState({
-    w: rootWidth > 700 ? Math.floor((rootWidth - 60) / 4) : rootWidth,
+    w: rootWidth > 768 ? Math.floor((rootWidth - 60) / 4) : rootWidth,
     h: "",
     fit: "contain",
     position: "center",
